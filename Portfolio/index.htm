@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li> <a href="#inicio" class="menu-link">inicio</a></li>
+            <li> <a href="#Projetos" class="menu-link">Projetos</a> </li>
+            <li> <a href="#Sobre" class="menu-link">Sobre</a></li>
+            <li> <a href="#Contatos" class="menu-link">Contatos</a></li>
+        </ul>
+
+        <div class="redes-sociais">
+            <a href="https://github.com/DanielRodrigues09" target="_blank">
+                <img src="./img/github.png" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/daniel-rodrigues09/" target="_blank">
+                <img src="./img/linkedin.png" alt="LinkedIn">
+            </a>
+        </div>
+    </nav>
+    <main id="inicio" class="cabecalho">
+        <img src="./img/perfil.jpg" alt="foto daniel" class="foto-perfil">
+        <h1>Daniel Rodrigues</h1>
+        <p class="cabecalho-sub"> Developer | React, JavaScript & APIs</p>
+
+    </main>
+    <section id="Sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre min</h2>
+
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                💻 <strong>Sobre Mim</strong> <br>
+                🔹 Profissional com experiência em suporte técnico N2, solucionando problemas e garantindo a melhor
+                experiência do cliente. <br>
+                🔹 Conhecimento em bancos de dados (SQL Server) e análise de dados (Power BI) para gerar insights e
+                melhorar processos. <br>
+                🔹 Habilidade no uso de Postman API para testes e integração de sistemas. <br>
+                🔹 Organização, comunicação e foco na resolução de problemas com tecnologia. <br><br>
+
+                🚀 <strong>Transição para Desenvolvimento Web</strong> <br>
+                💡 Atualmente estudando Desenvolvimento Web com foco em HTML, CSS, JavaScript, React e APIs. <br>
+                📌 Interesse em construir aplicações eficientes e escaláveis, unindo minha experiência em TI e suporte
+                técnico ao desenvolvimento de soluções web. <br>
+                🎯 Objetivo: Atuar como Desenvolvedor Web e contribuir com inovação e otimização de processos. <br>
+            </p>
+        </div>
+    </section>
+    <section id="Projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="./img/carro.png" alt="projeto 1" class="projetos-imagem">
+                <div class="caixa-texto">
+                    <h3 class="info-projetos">Loja carros</h3>
+                    <p class="paragrafo-projetos">Plataforma de compra e venda de carros de luxo, com design responsivo
+                        e navegação intuitiva para proporcionar a melhor experiência ao usuário.</p>
+                </div>
+
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/projeto2.png" alt="projeto 2" class="projetos-imagem">
+                <div class="caixa-texto">
+                    <h3 class="info-projetos">Pagina viagens</h3>
+                    <p class="paragrafo-projetos">Landing page moderna para uma agência de viagens, apresentando
+                        destinos incríveis, formulário de contato e layout otimizado para dispositivos móveis.</p>
+
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/projeto3.png" alt="projeto 3" class="projetos-imagem">
+                <div class="caixa-texto">
+                    <h3 class="info-projetos">Site para barbearia</h3>
+                    <p class="paragrafo-projetos">Website profissional para uma barbearia, com sistema de agendamento
+                        online, exibição de serviços e integração com redes sociais.</p>
+
+                </div>
+            </div>
+    </section>
+
+    <section id="Contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="5" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar mensagem</button>
+        </form>
+
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5537998238210';
+
+            const texto = `Olá, meu nome é ${nome}. ${mensagem}`;
+            const msgFormatada = encodeURIComponent(texto);
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+            console.log(url);
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>
